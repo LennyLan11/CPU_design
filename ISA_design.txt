@@ -1,0 +1,62 @@
+MIPS ARchitecture
+
+32-bit fixed-length instructions with three formats:
+
+Instruction: R, J, I type. 
+Format	| Opcode(6 bits)| rs (5 bits)    | rt (5 bits) | rd (5 bits) |	shamt (5 bits) | funct (6 bits) |
+---------------------------------------------------------------------------------------------------------
+R-type	| 000000	      | rs	           | rt	         | rd	 	       |  00000          | function       |
+I-type	| opcode	      | rs	           | rt	         | immediate   |		             |                |
+J-type	| opcode	      | target address |             |  (16 bits)  |                 |                |
+        |               |    (26 bits)   |             |             |                 |                |
+--------------------------------------------------------------------------------------------------------- 
+
+Registers:
+  32 general-purpose registers (R0-R31)
+  Special registers: PC (Program Counter), Stack Pointer (SP), Flags, HI, LO (for multiplication/division results)
+
+
+Instruction Set:
+  Arithmetic and Logical Operations:
+    ADD, SUB, ADDI
+    AND, OR, XOR
+    SLL, SRL (Shift left/right logical)
+
+  Data Transfer:
+    LW, SW (Load/Store word)
+    LUI (Load upper immediate)
+
+  Control Flow:
+    J (Jump)
+    JAL (Jump and link)
+    JR (Jump register)
+    BEQ, BNE (Branch if equal/not equal)
+
+  Comparison:
+    SLT, SLTI (Set less than)
+
+  Multiplication and Division:
+    MULT, DIV
+    MFHI, MFLO (Move from HI/LO)
+  
+  Bitwise:
+    NOT, AND, OR, XOR, NOR
+  
+  NOP
+
+  PUSH, POP
+
+Addressing Modes:
+  Register addressing
+  Immediate addressing (is this needed?)
+  Base + offset addressing (for load/store) (is this needed?)
+
+
+Flags:
+  Alu:
+  Zero(Z), Carry(C), Overflow(V), sign(S)
+
+
+Memory:
+  2^16
+
